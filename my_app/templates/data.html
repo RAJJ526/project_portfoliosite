@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Table</title>
+    
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #d7d1d1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Table container */
+        .table-container {
+            width: 100%;
+            max-width: 1200px;
+            overflow-x: auto;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* Table style */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1200px;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #7d2ae8;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Zebra striping for rows */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover effect for rows */
+        tr:hover {
+            background-color: #f0f0f5;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+        }
+
+        h2 {
+    text-align: center;
+    color: #4a00e0;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0px 4px 8px rgba(74, 0, 224, 0.2);
+}
+
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h2>Client Information Table</h2>
+        <form method="">
+            <input class="form-control" type="search" name="search">
+            <button  type="submit">search</button>
+        </form>
+        <form method="">
+            <input class="form-control" type="date" name="date">
+            <button  type="submit">Export</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+
+                    <th>S.N</th>
+                    <th>report_Date_at_added</th>
+
+
+                    <th>User ID</th>
+                    <th>Client Name</th>
+                    <th>Areas of Working</th>
+                    <th>Work Date</th>
+                    <th>Claim ID</th>
+                    <th>Insurance</th>
+                    <th>Patient</th>
+                    <th>Service Data</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+                    <th>Action</th>
+                    <th>Payment Information</th>
+                    <th>Patient Responsibility</th>
+                    <th>Cheque No</th>
+                    <th>Cheque Date</th>
+                    <th>Paid Status</th>
+                    <th>Paid By</th>
+                    <th>Denial Code</th>
+                    <th>Add Corrected</th>
+                    <th>DX Corrected</th>
+                    <th>CPT</th>
+                    <th>Solutions</th>
+                    <th>Billed Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in objs %}
+                <!-- Sample row for data preview -->
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.start_date}}</td>
+                    <td>{{i.user_id}}</td>
+                    <td>{{i.client_name}}</td>
+                    <td>{{i.areas_of_working}}</td>
+                    <td>{{i.work_date}}</td>
+                    <td>{{i.claim_id}}</td>
+                    <td>{{i.insurance}}</td>
+                    <td>{{i.patient}}</td>
+                    <td>{{i.service_data}}</td>
+                    <td>{{i.balance}}</td>
+                    <td>{{i.status}}</td>
+                    <td>{{i.reason}}</td>
+                    <td>{{i.action}}</td>
+                    <td>{{i.payment_information}}</td>
+                    <td>{{i.patient_responsibility}}</td>
+                    <td>{{i.cheque_no}}</td>
+                    <td>{{i.cheque_date}}</td>
+                    <td>{{i.paid_status}}</td>
+                    <td>{{i.paid_by}}</td>
+                    <td>{{i.denial_code}}</td>
+                    <td>{{i.add_corrected}}</td>
+                    <td>{{i.dx_corrected}}</td>
+                    <td>{{i.cpt}}</td>
+                    <td>{{i.solutions}}</td>
+                    <td>{{i.billed_amount}}</td>
+                    
+                </tr>
+                {% endfor %}
+                <!-- Additional rows can be added similarly -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
